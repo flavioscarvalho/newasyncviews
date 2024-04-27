@@ -15,14 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from django.urls import path
 from . import views  # Importa as views do mesmo aplicativo
 
 # Define as rotas para o projeto
 urlpatterns = [
-    path('time_counter/', views.async_time_counter, name='time_counter'),  # Rota para a view assíncrona
-    path('api/', views.api, name='api'),  # Rota para a view padrão
-    path('async_http/', views.async_view, name='async_http')  # Rota para a função assíncrona de chamadas HTTP
+    path('time_counter/', views.async_time_counter, name='time_counter'),  # Rota para a view assíncrona do contador de tempo
+    path('api/', views.api, name='api'),  # Rota para a view da API
+    path('async_http/', views.async_view, name='async_http'),  # Rota para a função assíncrona de chamadas HTTP
+    path('sync_http/', views.sync_view, name='sync_http')  # Rota para a função síncrona de chamadas HTTP
 ]
 
 
